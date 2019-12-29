@@ -5,12 +5,13 @@ import sys
 
 from PyQt5.uic import loadUiType
 
+
 ui , _ = loadUiType('library.ui')
 
 class MainApp(QMainWindow , ui):
     def __init__(self):
         QMainWindow.__init__(self)
-        self.setupUI(self)
+        self.setupUi(self)
 
 def main():
     app = QApplication(sys.argv)
@@ -21,4 +22,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
+
