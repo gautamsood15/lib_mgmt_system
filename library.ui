@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>951</width>
-    <height>533</height>
+    <height>566</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -169,7 +169,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <property name="iconSize">
      <size>
@@ -1286,12 +1286,96 @@
       <height>471</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(153, 153, 153);</string>
     </property>
     <property name="title">
      <string/>
     </property>
+    <widget class="QLabel" name="label_35">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>281</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Century Gothic</family>
+       <pointsize>20</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>   APPLY NEW THEME </string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_8">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>170</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_18">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>170</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_19">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>270</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_20">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>270</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
