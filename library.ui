@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1017</width>
+    <width>951</width>
     <height>533</height>
    </rect>
   </property>
@@ -164,12 +164,12 @@
      <rect>
       <x>100</x>
       <y>0</y>
-      <width>821</width>
+      <width>831</width>
       <height>491</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <property name="iconSize">
      <size>
@@ -379,7 +379,7 @@
        <rect>
         <x>-10</x>
         <y>0</y>
-        <width>831</width>
+        <width>851</width>
         <height>471</height>
        </rect>
       </property>
@@ -771,7 +771,7 @@
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
-      <string>Page</string>
+      <string>Tab 3</string>
      </attribute>
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
@@ -1092,14 +1092,14 @@
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>Page</string>
+      <string>Tab 4</string>
      </attribute>
      <widget class="QTabWidget" name="tabWidget_3">
       <property name="geometry">
        <rect>
         <x>-4</x>
         <y>-1</y>
-        <width>831</width>
+        <width>851</width>
         <height>471</height>
        </rect>
       </property>
@@ -1277,13 +1277,29 @@
      </widget>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>20</y>
+      <width>301</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(153, 153, 153);</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1017</width>
+     <width>951</width>
      <height>21</height>
     </rect>
    </property>
