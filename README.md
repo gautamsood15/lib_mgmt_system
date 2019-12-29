@@ -5,3 +5,31 @@ To store the book info we use the mysql database and it also has a login system.
 
 In this you can register/remove a book as well as borrow it for a certain period  of time.
 
+
+
+PROJECT STRUCTURE
+
+Library Management System :
+	- add new book
+	- editing book
+	- deleting book
+	- categories
+	- search
+	- users , login , signup
+	- settings [categories , author , publisher]
+	- day to day operations
+	- generate reports [excel files]
+
+
+	book :
+		- title
+		- description
+		- category
+		- price
+		- author
+		- publisher
+
+	users :
+		- username
+		- password
+		- email addr
