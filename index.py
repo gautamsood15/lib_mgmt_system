@@ -46,6 +46,8 @@ class MainApp(QMainWindow , ui):
         self.pushButton_17.clicked.connect(self.Add_Publisher)
 
         self.pushButton_10.clicked.connect(self.Search_Books)
+        self.pushButton_9.clicked.connect(self.Edit_Books)
+        self.pushButton_11.clicked.connect(self.Delete_Books)
 
 
     def Show_Themes(self):
@@ -119,7 +121,7 @@ class MainApp(QMainWindow , ui):
         self.cur.execute(sql , [(book_title)])
 
         data = self.cur.fetchone()
-        print(data)
+
 
         self.lineEdit_11.setText(data[1])
         self.textEdit_2.setText(data[2])
@@ -131,10 +133,51 @@ class MainApp(QMainWindow , ui):
 
 
     def Edit_Books(self):
-        pass
+
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password='root@123' , db='library')
+        self.cur = self.db.cursor()
+
+        book_title = self.lineEdit_11.text()
+        book_description = self.textEdit_2.toPlainText()
+        book_code = self.lineEdit_8.text()
+        book_category = self.comboBox_9.currentIndex()
+        book_author = self.comboBox_10.currentIndex()
+        book_publisher = self.comboBox_11.currentIndex()
+        book_price = self.lineEdit_9.text()
+
+        search_book_title = self.lineEdit_10.text()
+
+        self.cur.execute('''
+            UPDATE book SET book_name=%s,book_description=%s,book_code=%s,book_category=%s,book_author=%s,book_publisher=%s,book_price=%s WHERE book_name = %s
+        ''', (book_title , book_description , book_code , book_category , book_author , book_publisher , book_price , search_book_title))
+
+        self.db.commit()
+        self.statusBar().showMessage('Book Updated Sucessfully')
+
+
+
+
 
     def Delete_Books(self):
-        pass
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        book_title = self.lineEdit_10.text()
+
+        warning = QMessageBox.warning(self , 'Delete Book' , "Are you sure you want to delete this Book" , QMessageBox.Yes | QMessageBox.No)
+
+        if warning == QMessageBox.Yes :
+            sql = ''' DELETE FROM book WHERE book_name = %s'''
+            self.cur.execute(sql , [(book_title)])
+            self.db.commit()
+            self.statusBar().showMessage('Book Deleted')
+
+        else :
+            pass   # meaning do nothing
+
+
+
 
 
 
