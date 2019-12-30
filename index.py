@@ -13,6 +13,9 @@ class MainApp(QMainWindow , ui):
         QMainWindow.__init__(self)
         self.setupUi(self)
 
+
+    
+
 def main():
     app = QApplication(sys.argv)
     window = MainApp()
