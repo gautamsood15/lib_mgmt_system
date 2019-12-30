@@ -34,3 +34,8 @@ Library Management System :
 		- username
 		- password
 		- email addr
+
+	day_to_day :
+		- book name
+		- retrieve / rent
+		- days
