@@ -57,7 +57,7 @@ class MainApp(QMainWindow , ui):
         self.pushButton_22.clicked.connect(self.Ubuntu_Theme)
         self.pushButton_25.clicked.connect(self.ElegantDark_Theme)
         self.pushButton_24.clicked.connect(self.MaterialDark_Theme)
-
+        self.
 
     def Show_Themes(self):
         self.groupBox_3.show()

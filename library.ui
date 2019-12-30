@@ -1366,7 +1366,8 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(153, 153, 153);</string>
+     <string notr="true">
+background-color: rgb(12, 12, 12);</string>
     </property>
     <property name="title">
      <string/>
@@ -1392,6 +1393,9 @@
        <kerning>true</kerning>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(245, 245, 245);</string>
+     </property>
      <property name="text">
       <string>   APPLY NEW THEME </string>
      </property>
@@ -1404,6 +1408,9 @@
        <width>91</width>
        <height>91</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(241, 241, 241);</string>
      </property>
      <property name="text">
       <string>PushButton</string>
@@ -1418,6 +1425,9 @@
        <height>91</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(240, 240, 240);</string>
+     </property>
      <property name="text">
       <string>PushButton</string>
      </property>
@@ -1431,6 +1441,9 @@
        <height>91</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(240, 240, 240);</string>
+     </property>
      <property name="text">
       <string>PushButton</string>
      </property>
@@ -1443,6 +1456,9 @@
        <width>91</width>
        <height>91</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(240, 240, 240);</string>
      </property>
      <property name="text">
       <string>PushButton</string>
@@ -1464,6 +1480,9 @@
       <font>
        <pointsize>8</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(243, 243, 243);</string>
      </property>
      <property name="text">
       <string>&gt;</string>
