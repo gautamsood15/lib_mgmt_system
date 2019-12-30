@@ -1403,7 +1403,7 @@ background-color: rgb(12, 12, 12);</string>
     <widget class="QPushButton" name="pushButton_22">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>170</x>
        <y>170</y>
        <width>91</width>
        <height>91</height>
@@ -1413,13 +1413,13 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(241, 241, 241);</string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_23">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>70</x>
        <y>170</y>
        <width>91</width>
        <height>91</height>
@@ -1429,13 +1429,13 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(240, 240, 240);</string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_24">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>170</x>
        <y>270</y>
        <width>91</width>
        <height>91</height>
@@ -1445,13 +1445,13 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(240, 240, 240);</string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_25">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>70</x>
        <y>270</y>
        <width>91</width>
        <height>91</height>
@@ -1461,7 +1461,7 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(240, 240, 240);</string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_26">
@@ -1472,8 +1472,8 @@ background-color: rgb(12, 12, 12);</string>
       <rect>
        <x>0</x>
        <y>250</y>
-       <width>31</width>
-       <height>23</height>
+       <width>41</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
@@ -1485,7 +1485,23 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(243, 243, 243);</string>
      </property>
      <property name="text">
-      <string>&gt;</string>
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_8">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>400</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(243, 243, 243);</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>

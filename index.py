@@ -57,7 +57,7 @@ class MainApp(QMainWindow , ui):
         self.pushButton_22.clicked.connect(self.Ubuntu_Theme)
         self.pushButton_25.clicked.connect(self.ElegantDark_Theme)
         self.pushButton_24.clicked.connect(self.MaterialDark_Theme)
-        self.
+        self.pushButton_8.clicked.connect(self.Default_Theme)
 
     def Show_Themes(self):
         self.groupBox_3.show()
@@ -487,26 +487,10 @@ class MainApp(QMainWindow , ui):
         style = style.read()
         self.setStyleSheet(style)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def Default_Theme(self):
+        style = open('themes/default.css' , 'r')
+        style = style.read()
+        self.setStyleSheet(style)
 
 
 
