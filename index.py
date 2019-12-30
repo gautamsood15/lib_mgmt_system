@@ -3,6 +3,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import sys
 
+import MySQLdb
+
 from PyQt5.uic import loadUiType
 
 
@@ -12,6 +14,32 @@ class MainApp(QMainWindow , ui):
     def __init__(self):
         QMainWindow.__init__(self)
         self.setupUi(self)
+        self.Handel_UI_Changes()
+        self.Handel_Buttons()
+
+    
+    def Handel_UI_Changes(self):
+        self.Hiding_Themes()
+        
+    
+    def Handel_Buttons(self):
+        self.pushButton_5.clicked.connect(self.Show_Themes)
+        self.pushButton_21.clicked.connect(self.Hiding_Themes)
+
+    def Show_Themes(self):
+        self.groupBox_3.show()
+
+    def Hiding_Themes(self):
+        self.groupBox_3.hide()
+
+
+
+
+
+
+
+
+
 
 
 
