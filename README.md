@@ -39,3 +39,12 @@ Library Management System :
 		- book name
 		- retrieve / rent
 		- days
+
+	category :
+		- category name
+
+	publisher :
+	 	- publisher name
+
+	 author :
+	 	- author name
