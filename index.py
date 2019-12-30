@@ -53,7 +53,10 @@ class MainApp(QMainWindow , ui):
         self.pushButton_13.clicked.connect(self.Login)
         self.pushButton_14.clicked.connect(self.Edit_User)
 
-
+        self.pushButton_23.clicked.connect(self.Aqua_Theme)
+        self.pushButton_22.clicked.connect(self.Ubuntu_Theme)
+        self.pushButton_25.clicked.connect(self.ElegantDark_Theme)
+        self.pushButton_24.clicked.connect(self.MaterialDark_Theme)
 
 
     def Show_Themes(self):
