@@ -1366,8 +1366,8 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-background-color: rgb(12, 12, 12);</string>
+     <string notr="true">background-color:rgb(6, 31, 67);
+</string>
     </property>
     <property name="title">
      <string/>
@@ -1413,7 +1413,7 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(241, 241, 241);</string>
      </property>
      <property name="text">
-      <string/>
+      <string>UBUNTU</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_23">
@@ -1429,7 +1429,7 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(240, 240, 240);</string>
      </property>
      <property name="text">
-      <string/>
+      <string>AQUA</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_24">
@@ -1445,7 +1445,7 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(240, 240, 240);</string>
      </property>
      <property name="text">
-      <string/>
+      <string>MATERIAL DARK</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_25">
@@ -1461,7 +1461,7 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(240, 240, 240);</string>
      </property>
      <property name="text">
-      <string/>
+      <string>ELEGANT DARK</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_26">
@@ -1487,6 +1487,16 @@ background-color: rgb(12, 12, 12);</string>
      <property name="text">
       <string/>
      </property>
+     <property name="icon">
+      <iconset resource="icons.qrc">
+       <normaloff>:/icons/arrow.png</normaloff>:/icons/arrow.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>25</height>
+      </size>
+     </property>
     </widget>
     <widget class="QPushButton" name="pushButton_8">
      <property name="geometry">
@@ -1501,7 +1511,7 @@ background-color: rgb(12, 12, 12);</string>
       <string notr="true">background-color: rgb(243, 243, 243);</string>
      </property>
      <property name="text">
-      <string/>
+      <string>DEFAULT</string>
      </property>
     </widget>
    </widget>
