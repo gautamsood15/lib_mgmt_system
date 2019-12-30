@@ -54,6 +54,8 @@ class MainApp(QMainWindow , ui):
         self.pushButton_14.clicked.connect(self.Edit_User)
 
 
+
+
     def Show_Themes(self):
         self.groupBox_3.show()
 
@@ -454,6 +456,61 @@ class MainApp(QMainWindow , ui):
         for pub in data:
             self.comboBox_5.addItem(pub[0])
             self.comboBox_11.addItem(pub[0])
+
+
+
+
+
+########################### UI THEMES #####################################
+
+
+    def Ubuntu_Theme(self):
+        style = open('themes/ubuntu.css' , 'r')
+        style = style.read()
+        self.setStyleSheet(style)
+
+    def Aqua_Theme(self):
+        style = open('themes/aqua.css' , 'r')
+        style = style.read()
+        self.setStyleSheet(style)
+
+    def ElegantDark_Theme(self):
+        style = open('themes/elegantdark.css' , 'r')
+        style = style.read()
+        self.setStyleSheet(style)
+
+    def MaterialDark_Theme(self):
+        style = open('themes/materialdark.css' , 'r')
+        style = style.read()
+        self.setStyleSheet(style)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
