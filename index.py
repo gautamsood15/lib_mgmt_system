@@ -131,6 +131,7 @@ class MainApp(QMainWindow , ui):
         self.statusBar().showMessage('New Category Added')
         self.lineEdit_22.setText('')
         self.Show_Category()
+        self.Show_Category_Combo()
 
     def Show_Category(self):
 
@@ -171,6 +172,7 @@ class MainApp(QMainWindow , ui):
         self.statusBar().showMessage('New Author Added')
         self.lineEdit_23.setText('')
         self.Show_Author()
+        self.Show_Author_Combo()
 
 
     def Show_Author(self):
@@ -212,6 +214,7 @@ class MainApp(QMainWindow , ui):
         self.statusBar().showMessage('New Publisher Added')
         self.lineEdit_24.setText('')
         self.Show_Publisher()
+        self.Show_Publisher_Combo()
 
 
 
@@ -248,10 +251,13 @@ class MainApp(QMainWindow , ui):
         self.cur.execute( ''' SELECT category_name FROM category ''')
         data = self.cur.fetchall()
 
-        self.comboBox_3.addItem('SELECT A CATEGORY')
+        self.comboBox_3.clear()
 
+        self.comboBox_3.addItem('SELECT A CATEGORY')
         for category in data :
             self.comboBox_3.addItem(category[0])
+
+
 
     def Show_Author_Combo(self):
 
@@ -261,10 +267,13 @@ class MainApp(QMainWindow , ui):
         self.cur.execute(''' SELECT author_name FROM author ''')
         data = self.cur.fetchall()
 
-        self.comboBox_4.addItem('SELECT AN AUTHOR')
+        self.comboBox_4.clear()
 
+        self.comboBox_4.addItem('SELECT AN AUTHOR')
         for auth in data:
             self.comboBox_4.addItem(auth[0])
+
+
 
 
 
@@ -276,8 +285,9 @@ class MainApp(QMainWindow , ui):
         self.cur.execute(''' SELECT publisher_name FROM publisher ''')
         data = self.cur.fetchall()
 
-        self.comboBox_5.addItem('SELECT A PUBLISHER')
+        self.comboBox_5.clear()
 
+        self.comboBox_5.addItem('SELECT A PUBLISHER')
         for auth in data:
             self.comboBox_5.addItem(auth[0])
 
