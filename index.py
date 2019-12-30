@@ -14,7 +14,6 @@ class MainApp(QMainWindow , ui):
         self.setupUi(self)
 
 
-    
 
 def main():
     app = QApplication(sys.argv)
