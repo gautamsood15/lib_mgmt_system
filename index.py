@@ -17,6 +17,8 @@ class MainApp(QMainWindow , ui):
         self.Handel_UI_Changes()
         self.Handel_Buttons()
 
+        self.Show_Category()
+
     
     def Handel_UI_Changes(self):
         self.Hiding_Themes()
@@ -123,6 +125,31 @@ class MainApp(QMainWindow , ui):
 
         self.db.commit()
         self.statusBar().showMessage('New Category Added')
+        self.lineEdit_22.setText('')
+        self.Show_Category()
+
+    def Show_Category(self):
+
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password='root@123' , db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute( ''' SELECT category_name FROM category ''')
+        data = self.cur.fetchall()
+        print(data)
+
+        if data :
+            self.tableWidget_2.setRowCount(0)
+            self.tableWidget_2.insertRow(0)
+            for row , form in enumerate(data):
+                for column , item in enumerate(form):
+                    self.tableWidget_2.setItem(row , column , QTableWidgetItem(str(item)))
+                    column += 1
+
+                row_position = self.tableWidget_2.rowCount()
+                self.tableWidget_2.insertRow(row_position)
+
+
+
 
 
 
@@ -139,6 +166,17 @@ class MainApp(QMainWindow , ui):
 
         self.db.commit()
         self.statusBar().showMessage('New Author Added')
+        self.lineEdit_23.setText('')
+
+
+
+    def Show_Author(self):
+
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password='root@123' , db='library')
+        self.cur = self.db.cursor()
+
+
+
 
 
 
@@ -155,6 +193,13 @@ class MainApp(QMainWindow , ui):
 
         self.db.commit()
         self.statusBar().showMessage('New Publisher Added')
+        self.lineEdit_24.setText('')
+
+
+
+
+    def Show_Publisher(self):
+        pass
 
 
 
