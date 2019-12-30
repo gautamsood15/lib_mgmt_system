@@ -420,16 +420,6 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPlainTextEdit" name="plainTextEdit">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>100</y>
-          <width>401</width>
-          <height>261</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLineEdit" name="lineEdit_4">
         <property name="geometry">
          <rect>
@@ -574,6 +564,16 @@
          <font>
           <pointsize>10</pointsize>
          </font>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>100</y>
+          <width>401</width>
+          <height>261</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -724,16 +724,6 @@
          <string>Book Code</string>
         </property>
        </widget>
-       <widget class="QPlainTextEdit" name="plainTextEdit_3">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>120</y>
-          <width>401</width>
-          <height>261</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QLineEdit" name="lineEdit_10">
         <property name="geometry">
          <rect>
@@ -804,6 +794,16 @@
         </property>
         <property name="text">
          <string>Book Title</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>120</y>
+          <width>401</width>
+          <height>261</height>
+         </rect>
         </property>
        </widget>
       </widget>
