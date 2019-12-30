@@ -393,12 +393,24 @@
         <height>521</height>
        </rect>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>851</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>851</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
-        <string>Add Book</string>
+        <string>     Add Book</string>
        </attribute>
        <widget class="QLineEdit" name="lineEdit_2">
         <property name="geometry">
@@ -579,7 +591,7 @@
       </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
-        <string>Edit / Delete Book</string>
+        <string>   Edit / Delete Book   </string>
        </attribute>
        <widget class="QLineEdit" name="lineEdit_8">
         <property name="geometry">
@@ -1177,7 +1189,7 @@
       </property>
       <widget class="QWidget" name="tab_9">
        <attribute name="title">
-        <string>Categories</string>
+        <string>   Categories  </string>
        </attribute>
        <widget class="QTableWidget" name="tableWidget_2">
         <property name="geometry">
@@ -1233,7 +1245,7 @@
       </widget>
       <widget class="QWidget" name="tab_10">
        <attribute name="title">
-        <string>Author</string>
+        <string>   Author  </string>
        </attribute>
        <widget class="QLabel" name="label_33">
         <property name="geometry">
@@ -1289,7 +1301,7 @@
       </widget>
       <widget class="QWidget" name="tab_11">
        <attribute name="title">
-        <string>Publishers</string>
+        <string>   Publishers  </string>
        </attribute>
        <widget class="QLabel" name="label_34">
         <property name="geometry">
@@ -1353,9 +1365,9 @@
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>30</y>
+      <y>10</y>
       <width>301</width>
-      <height>481</height>
+      <height>501</height>
      </rect>
     </property>
     <property name="font">
@@ -1394,7 +1406,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(245, 245, 245);</string>
+      <string notr="true">background-color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
       <string>   APPLY NEW THEME </string>
@@ -1410,7 +1422,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(241, 241, 241);</string>
+      <string notr="true">background-color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
       <string>UBUNTU</string>
@@ -1426,7 +1438,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(240, 240, 240);</string>
+      <string notr="true">background-color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
       <string>AQUA</string>
@@ -1442,7 +1454,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(240, 240, 240);</string>
+      <string notr="true">background-color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
       <string>MATERIAL DARK</string>
@@ -1458,7 +1470,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(240, 240, 240);</string>
+      <string notr="true">background-color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
       <string>ELEGANT DARK</string>
@@ -1482,7 +1494,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(243, 243, 243);</string>
+      <string notr="true">background-color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
       <string/>
@@ -1508,7 +1520,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(243, 243, 243);</string>
+      <string notr="true">background-color: rgb(49, 49, 49);</string>
      </property>
      <property name="text">
       <string>DEFAULT</string>
