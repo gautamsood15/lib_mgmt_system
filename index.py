@@ -49,6 +49,10 @@ class MainApp(QMainWindow , ui):
         self.pushButton_9.clicked.connect(self.Edit_Books)
         self.pushButton_11.clicked.connect(self.Delete_Books)
 
+        self.pushButton_12.clicked.connect(self.Add_New_User)
+        self.pushButton_13.clicked.connect(self.Login)
+        self.pushButton_14.clicked.connect(self.Edit_User)
+
 
     def Show_Themes(self):
         self.groupBox_3.show()
@@ -76,7 +80,7 @@ class MainApp(QMainWindow , ui):
 
 
 
-############ Book ##############
+########################################## BOOK ###############################################
 
     def Add_New_Book(self):
 
@@ -181,19 +185,94 @@ class MainApp(QMainWindow , ui):
 
 
 
-############ Users ##############
+####################################### USERS ###################################################
+
+
 
     def Add_New_User(self):
-        pass
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        username = self.lineEdit_12.text()
+        email = self.lineEdit_13.text()
+        password = self.lineEdit_14.text()
+        password2 = self.lineEdit_15.text()
+
+        if password == password2 :
+            self.cur.execute('''
+                INSERT INTO users(user_name , user_email , user_password) 
+                VALUES (%s , %s , %s)
+            ''', (username , email, password))
+
+            self.db.commit()
+            self.statusBar().showMessage('New User Added')
+
+        else:
+            self.label_9.setText('Ensure that both passwords match !!')
+
+
 
     def Login(self):
-        pass
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        username = self.lineEdit_16.text()
+        password = self.lineEdit_17.text()
+
+        sql = ''' SELECT * FROM users'''
+
+        self.cur.execute(sql)
+        data = self.cur.fetchall()
+        for row in data :
+            if username == row[1] and password == row[3]:
+                print('User Match')
+                self.statusBar().showMessage('Valid Username & Password')
+                self.groupBox_4.setEnabled(True)
+
+                self.lineEdit_18.setText(row[1])
+                self.lineEdit_20.setText(row[2])
+                self.lineEdit_19.setText(row[3])
+
+
 
     def Edit_User(self):
-        pass
+
+        original_name = self.lineEdit_16.text()
+
+        username = self.lineEdit_18.text()
+        email = self.lineEdit_20.text()
+        password = self.lineEdit_19.text()
+        password2 = self.lineEdit_21.text()
+
+        if password == password2 :
+            self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+            self.cur = self.db.cursor()
+
+            self.cur.execute('''
+                UPDATE users SET user_name = %s , user_email = %s , user_password = %s WHERE user_name = %s
+            ''', (username , email , password , original_name))
+
+            self.db.commit()
+            self.statusBar().showMessage('User Data Updated Successfully')
+
+            self.lineEdit_16.setText('')
+            self.lineEdit_17.setText('')
+            self.groupBox_4.setEnabled(False)
+            self.lineEdit_18.setText('')
+            self.lineEdit_20.setText('')
+            self.lineEdit_19.setText('')
+            self.lineEdit_21.setText('')
+
+        else:
+            print('Make sure you entered your password correctly')
 
 
-############ SETTINGS ##############
+
+
+
+########################################## SETTINGS ##################################################
 
     def Add_Category(self):
 
@@ -378,18 +457,7 @@ class MainApp(QMainWindow , ui):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+########################################################################################################################
 
 def main():
     app = QApplication(sys.argv)
