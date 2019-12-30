@@ -45,6 +45,9 @@ class MainApp(QMainWindow , ui):
         self.pushButton_16.clicked.connect(self.Add_Author)
         self.pushButton_17.clicked.connect(self.Add_Publisher)
 
+        self.pushButton_10.clicked.connect(self.Search_Books)
+
+
     def Show_Themes(self):
         self.groupBox_3.show()
 
@@ -106,7 +109,26 @@ class MainApp(QMainWindow , ui):
 
 
     def Search_Books(self):
-        pass
+
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password='root@123' , db='library')
+        self.cur = self.db.cursor()
+
+        book_title = self.lineEdit_10.text()
+
+        sql = ''' SELECT * FROM book WHERE book_name = %s'''
+        self.cur.execute(sql , [(book_title)])
+
+        data = self.cur.fetchone()
+        print(data)
+
+        self.lineEdit_11.setText(data[1])
+        self.textEdit_2.setText(data[2])
+        self.lineEdit_8.setText(data[3])
+        self.comboBox_9.setCurrentIndex(data[4])
+        self.comboBox_10.setCurrentIndex(data[5])
+        self.comboBox_11.setCurrentIndex(data[6])
+        self.lineEdit_9.setText(str(data[7]))
+
 
     def Edit_Books(self):
         pass
@@ -268,8 +290,10 @@ class MainApp(QMainWindow , ui):
         self.comboBox_3.clear()
 
         self.comboBox_3.addItem('SELECT A CATEGORY')
+        self.comboBox_9.addItem('SELECT A CATEGORY')
         for category in data :
             self.comboBox_3.addItem(category[0])
+            self.comboBox_9.addItem(category[0])
 
 
 
@@ -284,8 +308,10 @@ class MainApp(QMainWindow , ui):
         self.comboBox_4.clear()
 
         self.comboBox_4.addItem('SELECT AN AUTHOR')
+        self.comboBox_10.addItem('SELECT AN AUTHOR')
         for auth in data:
             self.comboBox_4.addItem(auth[0])
+            self.comboBox_10.addItem(auth[0])
 
 
 
@@ -302,8 +328,10 @@ class MainApp(QMainWindow , ui):
         self.comboBox_5.clear()
 
         self.comboBox_5.addItem('SELECT A PUBLISHER')
-        for auth in data:
-            self.comboBox_5.addItem(auth[0])
+        self.comboBox_11.addItem('SELECT A PUBLISHER')
+        for pub in data:
+            self.comboBox_5.addItem(pub[0])
+            self.comboBox_11.addItem(pub[0])
 
 
 

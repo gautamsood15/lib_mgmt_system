@@ -186,7 +186,7 @@
        <rect>
         <x>10</x>
         <y>120</y>
-        <width>791</width>
+        <width>781</width>
         <height>341</height>
        </rect>
       </property>
@@ -394,7 +394,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -799,10 +799,10 @@
        <widget class="QTextEdit" name="textEdit_2">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>20</x>
           <y>120</y>
-          <width>401</width>
-          <height>261</height>
+          <width>411</width>
+          <height>251</height>
          </rect>
         </property>
        </widget>
@@ -1155,7 +1155,7 @@
          <rect>
           <x>10</x>
           <y>140</y>
-          <width>801</width>
+          <width>781</width>
           <height>291</height>
          </rect>
         </property>
@@ -1224,7 +1224,7 @@
          <rect>
           <x>10</x>
           <y>140</y>
-          <width>801</width>
+          <width>781</width>
           <height>291</height>
          </rect>
         </property>
@@ -1280,7 +1280,7 @@
          <rect>
           <x>10</x>
           <y>140</y>
-          <width>801</width>
+          <width>781</width>
           <height>291</height>
          </rect>
         </property>
