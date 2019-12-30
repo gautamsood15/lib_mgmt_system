@@ -20,6 +20,10 @@ class MainApp(QMainWindow , ui):
         self.Show_Category()
         self.Show_Author()
         self.Show_Publisher()
+
+        self.Show_Category_Combo()
+        self.Show_Author_Combo()
+        self.Show_Publisher_Combo()
     
     def Handel_UI_Changes(self):
         self.Hiding_Themes()
@@ -28,7 +32,7 @@ class MainApp(QMainWindow , ui):
     
     def Handel_Buttons(self):
         self.pushButton_5.clicked.connect(self.Show_Themes)
-        self.pushButton_21.clicked.connect(self.Hiding_Themes)
+        self.pushButton_26.clicked.connect(self.Hiding_Themes)
 
         self.pushButton.clicked.connect(self.Open_Today_Tab)
         self.pushButton_2.clicked.connect(self.Open_Books_Tab)
@@ -66,7 +70,6 @@ class MainApp(QMainWindow , ui):
 
 
 
-###################### CONNECT db ####################################
 
 ############ Book ##############
 
@@ -230,6 +233,64 @@ class MainApp(QMainWindow , ui):
 
                 row_position = self.tableWidget_4.rowCount()
                 self.tableWidget_4.insertRow(row_position)
+
+
+
+
+
+########################### SHOW SETTINGS DATA IN UI #####################################
+
+    def Show_Category_Combo(self):
+
+        self.db = MySQLdb.connect(host='localhost' , user='root' , password='root@123' , db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute( ''' SELECT category_name FROM category ''')
+        data = self.cur.fetchall()
+
+        self.comboBox_3.addItem('SELECT A CATEGORY')
+
+        for category in data :
+            self.comboBox_3.addItem(category[0])
+
+    def Show_Author_Combo(self):
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute(''' SELECT author_name FROM author ''')
+        data = self.cur.fetchall()
+
+        self.comboBox_4.addItem('SELECT AN AUTHOR')
+
+        for auth in data:
+            self.comboBox_4.addItem(auth[0])
+
+
+
+    def Show_Publisher_Combo(self):
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute(''' SELECT publisher_name FROM publisher ''')
+        data = self.cur.fetchall()
+
+        self.comboBox_5.addItem('SELECT A PUBLISHER')
+
+        for auth in data:
+            self.comboBox_5.addItem(auth[0])
+
+
+
+
+
+
+
+
+
+
+
 
 
 

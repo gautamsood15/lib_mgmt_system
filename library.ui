@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>948</width>
+    <width>936</width>
     <height>590</height>
    </rect>
   </property>
@@ -163,13 +163,13 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>0</y>
-      <width>831</width>
-      <height>491</height>
+      <y>10</y>
+      <width>811</width>
+      <height>501</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="iconSize">
      <size>
@@ -262,6 +262,11 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <item>
        <property name="text">
         <string/>
@@ -286,6 +291,11 @@
         <width>81</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <item>
        <property name="text">
@@ -380,7 +390,7 @@
         <x>-10</x>
         <y>0</y>
         <width>851</width>
-        <height>471</height>
+        <height>521</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -417,36 +427,6 @@
           <y>100</y>
           <width>401</width>
           <height>261</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_3">
-        <property name="geometry">
-         <rect>
-          <x>560</x>
-          <y>111</y>
-          <width>241</width>
-          <height>31</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_4">
-        <property name="geometry">
-         <rect>
-          <x>560</x>
-          <y>181</y>
-          <width>241</width>
-          <height>31</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox_5">
-        <property name="geometry">
-         <rect>
-          <x>560</x>
-          <y>251</y>
-          <width>241</width>
-          <height>31</height>
          </rect>
         </property>
        </widget>
@@ -551,6 +531,51 @@
          <string>Publisher</string>
         </property>
        </widget>
+       <widget class="QComboBox" name="comboBox_3">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>110</y>
+          <width>241</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_4">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>180</y>
+          <width>241</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_5">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>250</y>
+          <width>241</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
@@ -588,6 +613,11 @@
           <height>31</height>
          </rect>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_9">
         <property name="geometry">
@@ -607,6 +637,11 @@
           <width>241</width>
           <height>31</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
        </widget>
        <widget class="QLabel" name="label_16">
@@ -643,6 +678,11 @@
           <width>241</width>
           <height>31</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
         </property>
        </widget>
        <widget class="QLabel" name="label_18">
@@ -1100,7 +1140,7 @@
         <x>-4</x>
         <y>-1</y>
         <width>851</width>
-        <height>471</height>
+        <height>501</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -1283,10 +1323,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>20</y>
+      <x>610</x>
+      <y>30</y>
       <width>301</width>
-      <height>471</height>
+      <height>481</height>
      </rect>
     </property>
     <property name="font">
@@ -1302,7 +1342,7 @@
     <property name="title">
      <string/>
     </property>
-    <widget class="QLabel" name="label_35">
+    <widget class="QLabel" name="label_36">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1327,7 +1367,7 @@
       <string>   APPLY NEW THEME </string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="pushButton_22">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -1340,7 +1380,7 @@
       <string>PushButton</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_18">
+    <widget class="QPushButton" name="pushButton_23">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -1353,7 +1393,7 @@
       <string>PushButton</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_19">
+    <widget class="QPushButton" name="pushButton_24">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -1366,7 +1406,7 @@
       <string>PushButton</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_20">
+    <widget class="QPushButton" name="pushButton_25">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -1379,7 +1419,7 @@
       <string>PushButton</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_21">
+    <widget class="QPushButton" name="pushButton_26">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -1390,6 +1430,11 @@
        <width>31</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>&gt;</string>
@@ -1402,7 +1447,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>948</width>
+     <width>936</width>
      <height>21</height>
     </rect>
    </property>
