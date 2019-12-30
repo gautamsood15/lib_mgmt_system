@@ -60,12 +60,34 @@ class MainApp(QMainWindow , ui):
 
 
 
+###################### CONNECT db ####################################
+
+############ Book ##############
+
+    def Add_New_Book(self):
+        pass
+
+    def Search_Books(self):
+        pass
+
+    def Edit_Books(self):
+        pass
+
+    def Delete_Books(self):
+        pass
 
 
 
+############ Users ##############
 
+    def Add_New_User(self):
+        pass
 
+    def Login(self):
+        pass
 
+    def Edit_User(self):
+        pass
 
 
 
