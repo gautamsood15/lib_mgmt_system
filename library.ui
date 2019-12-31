@@ -1200,6 +1200,15 @@
           <height>291</height>
          </rect>
         </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="midLineWidth">
+         <number>0</number>
+        </property>
+        <property name="columnCount">
+         <number>1</number>
+        </property>
         <column>
          <property name="text">
           <string>Category Name</string>
