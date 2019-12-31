@@ -16,7 +16,7 @@ class MainApp(QMainWindow , ui):
         self.setupUi(self)
         self.Handel_UI_Changes()
         self.Handel_Buttons()
-        self.Aqua_Theme()
+        self.Ubuntu_Theme()
 
         self.Show_Category()
         self.Show_Author()
