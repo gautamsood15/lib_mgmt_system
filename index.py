@@ -63,8 +63,8 @@ class MainApp(QMainWindow , ui):
 
         self.pushButton_18.clicked.connect(self.Add_New_Client)
         self.pushButton_20.clicked.connect(self.Search_Client)
-        self.pushButton_21.clicked.connect(self.Delete_Books)
-        self.pushButton_19.clicked.connect(self.Edit_Books)
+        self.pushButton_21.clicked.connect(self.Delete_Client)
+        self.pushButton_19.clicked.connect(self.Edit_Client)
 
     def Show_Themes(self):
         self.groupBox_3.show()
@@ -218,18 +218,9 @@ class MainApp(QMainWindow , ui):
         self.db.close()
         self.statusBar().showMessage('New Client Added')
 
-
-
-
-
-
-
-
-
-
-
-
-
+        self.lineEdit_5.setText('')
+        self.lineEdit_6.setText('')
+        self.lineEdit_7.setText('')
 
 
 
@@ -237,30 +228,70 @@ class MainApp(QMainWindow , ui):
         pass
 
     def Search_Client(self):
-        pass
+        client_aadharID = self.lineEdit_27.text()
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        sql = ''' SELECT * FROM clients WHERE client_aadhar_ID = %s '''
+        self.cur.execute(sql , [(client_aadharID)])
+
+        data = self.cur.fetchone()
+
+        self.lineEdit_28.setText(data[1])
+        self.lineEdit_29.setText(data[2])
+        self.lineEdit_30.setText(data[3])
+
+        self.db.commit()
+        self.db.close()
+
 
     def Edit_Client(self):
-        pass
+        client_original_aadharID = self.lineEdit_27.text()
+        client_name = self.lineEdit_28.text()
+        client_email = self.lineEdit_28.text()
+        client_aadharID = self.lineEdit_30.text()
+        
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+        
+        self.cur.execute('''
+            UPDATE clients SET client_name = %s , client_email = %s , client_aadhar_id = %s WHERE client_aadhar_id = %s
+        ''' , (client_name , client_email , client_aadharID , client_original_aadharID))
+
+        self.db.commit()
+        self.db.close()
+        self.statusBar().showMessage('Client Details Updated')
+
+        self.lineEdit_27.setText('')
+        self.lineEdit_28.setText('')
+        self.lineEdit_29.setText('')
+        self.lineEdit_30.setText('')
+
+
 
     def Delete_Client(self):
-        pass
 
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
 
+        client_aadhar = self.lineEdit_27.text()
 
+        warning = QMessageBox.warning(self , 'Delete Client' , "Are you sure you want to delete this Client" , QMessageBox.Yes | QMessageBox.No)
 
+        if warning == QMessageBox.Yes :
+            sql = ''' DELETE FROM clients WHERE client_aadhar_id = %s'''
+            self.cur.execute(sql , [(client_aadhar)])
+            self.db.commit()
+            self.statusBar().showMessage('Client Deleted')
 
+            self.lineEdit_27.setText('')
+            self.lineEdit_28.setText('')
+            self.lineEdit_29.setText('')
+            self.lineEdit_30.setText('')
 
-
-
-
-
-
-
-
-
-
-
-
+        else :
+            pass   # meaning do nothing
 
 
 
