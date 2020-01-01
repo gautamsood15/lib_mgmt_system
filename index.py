@@ -25,6 +25,9 @@ class MainApp(QMainWindow , ui):
         self.Show_Category_Combo()
         self.Show_Author_Combo()
         self.Show_Publisher_Combo()
+
+        self.Show_All_Clients()
+        self.Show_All_Books()
     
     def Handel_UI_Changes(self):
         self.Hiding_Themes()
@@ -96,6 +99,27 @@ class MainApp(QMainWindow , ui):
 
 
 ########################################## BOOK ###############################################
+
+    def Show_All_Books(self):
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute(''' SELECT book_name,book_description,book_code,book_category,book_author,book_publisher,book_price FROM book''')
+        data = self.cur.fetchall()
+
+        self.tableWidget_6.insertRow(0)
+
+        for row , form in enumerate(data):
+            for column , item in enumerate(form):
+                self.tableWidget_6.setItem(row , column , QTableWidgetItem(str(item)))
+                column += 1
+            row_position = self.tableWidget_6.rowCount()
+            self.tableWidget_6.insertRow(row_position)
+
+        self.db.close()
+
+
 
     def Add_New_Book(self):
 
@@ -225,7 +249,25 @@ class MainApp(QMainWindow , ui):
 
 
     def Show_All_Clients(self):
-        pass
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute(''' SELECT client_name , client_email , client_aadhar_id FROM clients''')
+        data = self.cur.fetchall()
+
+        self.tableWidget_5.insertRow(0)
+
+        for row , form in enumerate(data):
+            for column , item in enumerate(form):
+                self.tableWidget_5.setItem(row , column , QTableWidgetItem(str(item)))
+                column += 1
+            row_position = self.tableWidget_5.rowCount()
+            self.tableWidget_5.insertRow(row_position)
+
+        self.db.close()
+
+
 
     def Search_Client(self):
         client_aadharID = self.lineEdit_27.text()
