@@ -104,7 +104,7 @@ class MainApp(QMainWindow , ui):
     def Show_All_Books(self):
 
         self.tableWidget_6.clear()
-        
+
         self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
         self.cur = self.db.cursor()
 
@@ -269,6 +269,7 @@ class MainApp(QMainWindow , ui):
 
 
     def Add_New_Client(self):
+
         client_name = self.lineEdit_5.text()
         client_email = self.lineEdit_6.text()
         client_aadharID = self.lineEdit_7.text()
@@ -285,6 +286,8 @@ class MainApp(QMainWindow , ui):
         self.db.close()
         self.statusBar().showMessage('New Client Added')
 
+        self.Show_All_Clients()
+
         self.lineEdit_5.setText('')
         self.lineEdit_6.setText('')
         self.lineEdit_7.setText('')
@@ -293,7 +296,11 @@ class MainApp(QMainWindow , ui):
 
 
 
+
+
     def Show_All_Clients(self):
+
+        self.tableWidget_5.clear()
 
         self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
         self.cur = self.db.cursor()
@@ -352,6 +359,8 @@ class MainApp(QMainWindow , ui):
         self.db.close()
         self.statusBar().showMessage('Client Details Updated')
 
+        self.Show_All_Clients()
+
         self.lineEdit_27.setText('')
         self.lineEdit_28.setText('')
         self.lineEdit_29.setText('')
@@ -375,6 +384,8 @@ class MainApp(QMainWindow , ui):
             self.cur.execute(sql , [(client_aadhar)])
             self.db.commit()
             self.statusBar().showMessage('Client Deleted')
+
+            self.Show_All_Clients()
 
             self.lineEdit_27.setText('')
             self.lineEdit_28.setText('')
