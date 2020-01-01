@@ -129,9 +129,9 @@ class MainApp(QMainWindow , ui):
         book_title = self.lineEdit_2.text()
         book_description = self.textEdit.toPlainText()
         book_code = self.lineEdit_3.text()
-        book_category = self.comboBox_3.currentIndex()
-        book_author = self.comboBox_4.currentIndex()
-        book_publisher = self.comboBox_5.currentIndex()
+        book_category = self.comboBox_3.currentText()
+        book_author = self.comboBox_4.currentText()
+        book_publisher = self.comboBox_5.currentText()
         book_price = self.lineEdit_4.text()
 
         self.cur.execute('''
