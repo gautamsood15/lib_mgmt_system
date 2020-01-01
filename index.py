@@ -120,6 +120,7 @@ class MainApp(QMainWindow , ui):
         self.db.close()
 
 
+  
 
     def Add_New_Book(self):
 
