@@ -100,8 +100,11 @@ class MainApp(QMainWindow , ui):
 
 ########################################## BOOK ###############################################
 
+
     def Show_All_Books(self):
 
+        self.tableWidget_6.clear()
+        
         self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
         self.cur = self.db.cursor()
 
@@ -118,6 +121,7 @@ class MainApp(QMainWindow , ui):
             self.tableWidget_6.insertRow(row_position)
 
         self.db.close()
+
 
 
 
@@ -144,6 +148,8 @@ class MainApp(QMainWindow , ui):
         self.db.close()
         self.statusBar().showMessage('New Book Added')
 
+        self.Show_All_Books()
+
         self.lineEdit_2.setText('')
         self.textEdit.setPlainText('')
         self.lineEdit_3.setText('')
@@ -169,7 +175,7 @@ class MainApp(QMainWindow , ui):
 
 
         self.lineEdit_11.setText(data[1])
-        #self.textEdit_2.setText(data[2])
+        self.textEdit_2.setText(data[2])
         self.lineEdit_8.setText(data[3])
         self.comboBox_9.setCurrentText(data[4])
         self.comboBox_10.setCurrentText(data[5])
@@ -178,6 +184,7 @@ class MainApp(QMainWindow , ui):
 
         self.db.commit()
         self.db.close()
+
 
 
 
@@ -203,7 +210,22 @@ class MainApp(QMainWindow , ui):
         ''', (book_title , book_description , book_code , book_category , book_author , book_publisher , book_price , search_book_title))
 
         self.db.commit()
+        self.db.close()
         self.statusBar().showMessage('Book Updated Sucessfully')
+
+        self.Show_All_Books()
+
+        self.lineEdit_10.setText('')
+        self.lineEdit_11.setText('')
+        self.textEdit_2.setPlainText('')
+        self.lineEdit_8.setText('')
+        self.comboBox_9.setCurrentIndex(0)
+        self.comboBox_10.setCurrentIndex(0)
+        self.comboBox_11.setCurrentIndex(0)
+        self.lineEdit_9.setText('')
+
+
+
 
 
 
@@ -222,10 +244,23 @@ class MainApp(QMainWindow , ui):
             sql = ''' DELETE FROM book WHERE book_name = %s'''
             self.cur.execute(sql , [(book_title)])
             self.db.commit()
+            self.db.close()
             self.statusBar().showMessage('Book Deleted')
+
+            self.Show_All_Books()
+
+            self.lineEdit_10.setText('')
+            self.lineEdit_11.setText('')
+            self.textEdit_2.setPlainText('')
+            self.lineEdit_8.setText('')
+            self.comboBox_9.setCurrentIndex(0)
+            self.comboBox_10.setCurrentIndex(0)
+            self.comboBox_11.setCurrentIndex(0)
+            self.lineEdit_9.setText('')
 
         else :
             pass   # meaning do nothing
+
 
 
 
@@ -253,6 +288,8 @@ class MainApp(QMainWindow , ui):
         self.lineEdit_5.setText('')
         self.lineEdit_6.setText('')
         self.lineEdit_7.setText('')
+
+
 
 
 
@@ -296,6 +333,8 @@ class MainApp(QMainWindow , ui):
         self.db.close()
 
 
+
+
     def Edit_Client(self):
         client_original_aadharID = self.lineEdit_27.text()
         client_name = self.lineEdit_28.text()
@@ -320,6 +359,8 @@ class MainApp(QMainWindow , ui):
 
 
 
+
+
     def Delete_Client(self):
 
         self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
@@ -339,6 +380,8 @@ class MainApp(QMainWindow , ui):
             self.lineEdit_28.setText('')
             self.lineEdit_29.setText('')
             self.lineEdit_30.setText('')
+
+
 
         else :
             pass   # meaning do nothing
