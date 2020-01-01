@@ -48,3 +48,8 @@ Library Management System :
 
 	 author :
 	 	- author name
+
+	 clients :
+	 	- client name
+	 	- client email
+	 	- client aadhar id	

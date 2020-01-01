@@ -37,6 +37,7 @@ class MainApp(QMainWindow , ui):
 
         self.pushButton.clicked.connect(self.Open_Today_Tab)
         self.pushButton_2.clicked.connect(self.Open_Books_Tab)
+        self.pushButton_27.clicked.connect(self.Open_Clients_Tab)
         self.pushButton_3.clicked.connect(self.Open_Users_tab)
         self.pushButton_4.clicked.connect(self.Open_Settings_Tab)
 
@@ -60,6 +61,11 @@ class MainApp(QMainWindow , ui):
         self.pushButton_24.clicked.connect(self.MaterialDark_Theme)
         self.pushButton_8.clicked.connect(self.Default_Theme)
 
+        self.pushButton_18.clicked.connect(self.Add_New_Client)
+        self.pushButton_20.clicked.connect(self.Search_Client)
+        self.pushButton_21.clicked.connect(self.Delete_Books)
+        self.pushButton_19.clicked.connect(self.Edit_Books)
+
     def Show_Themes(self):
         self.groupBox_3.show()
 
@@ -75,11 +81,14 @@ class MainApp(QMainWindow , ui):
     def Open_Books_Tab(self):
         self.tabWidget.setCurrentIndex(1)
 
-    def Open_Users_tab(self):
+    def Open_Clients_Tab(self):
         self.tabWidget.setCurrentIndex(2)
 
-    def Open_Settings_Tab(self):
+    def Open_Users_tab(self):
         self.tabWidget.setCurrentIndex(3)
+
+    def Open_Settings_Tab(self):
+        self.tabWidget.setCurrentIndex(4)
 
 
 
@@ -185,6 +194,72 @@ class MainApp(QMainWindow , ui):
 
         else :
             pass   # meaning do nothing
+
+
+
+
+####################################### CLIENTS ###################################################
+
+
+    def Add_New_Client(self):
+        client_name = self.lineEdit_5.text()
+        client_email = self.lineEdit_6.text()
+        client_aadharID = self.lineEdit_7.text()
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute('''
+            INSERT INTO clients(client_name , client_email , client_aadhar_id)
+            VALUES (%s , %s , %s)
+        ''' , (client_name , client_email , client_aadharID))
+
+        self.db.commit()
+        self.db.close()
+        self.statusBar().showMessage('New Client Added')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    def Show_All_Clients(self):
+        pass
+
+    def Search_Client(self):
+        pass
+
+    def Edit_Client(self):
+        pass
+
+    def Delete_Client(self):
+        pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
