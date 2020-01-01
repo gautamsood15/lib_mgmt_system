@@ -120,7 +120,7 @@ class MainApp(QMainWindow , ui):
         self.db.close()
 
 
-  
+
 
     def Add_New_Book(self):
 
@@ -141,6 +141,7 @@ class MainApp(QMainWindow , ui):
         ''' ,(book_title , book_description , book_code , book_category , book_author , book_publisher , book_price))
 
         self.db.commit()
+        self.db.close()
         self.statusBar().showMessage('New Book Added')
 
         self.lineEdit_2.setText('')
@@ -168,12 +169,18 @@ class MainApp(QMainWindow , ui):
 
 
         self.lineEdit_11.setText(data[1])
-        self.textEdit_2.setText(data[2])
+        #self.textEdit_2.setText(data[2])
         self.lineEdit_8.setText(data[3])
-        self.comboBox_9.setCurrentIndex(data[4])
-        self.comboBox_10.setCurrentIndex(data[5])
-        self.comboBox_11.setCurrentIndex(data[6])
+        self.comboBox_9.setCurrentText(data[4])
+        self.comboBox_10.setCurrentText(data[5])
+        self.comboBox_11.setCurrentText(data[6])
         self.lineEdit_9.setText(str(data[7]))
+
+        self.db.commit()
+        self.db.close()
+
+
+
 
 
     def Edit_Books(self):
@@ -184,9 +191,9 @@ class MainApp(QMainWindow , ui):
         book_title = self.lineEdit_11.text()
         book_description = self.textEdit_2.toPlainText()
         book_code = self.lineEdit_8.text()
-        book_category = self.comboBox_9.currentIndex()
-        book_author = self.comboBox_10.currentIndex()
-        book_publisher = self.comboBox_11.currentIndex()
+        book_category = self.comboBox_9.currentText()
+        book_author = self.comboBox_10.currentText()
+        book_publisher = self.comboBox_11.currentText()
         book_price = self.lineEdit_9.text()
 
         search_book_title = self.lineEdit_10.text()
@@ -362,6 +369,11 @@ class MainApp(QMainWindow , ui):
 
             self.db.commit()
             self.statusBar().showMessage('New User Added')
+
+            self.lineEdit_12.setText('')
+            self.lineEdit_13.setText('')
+            self.lineEdit_14.setText('')
+            self.lineEdit_15.setText('')
 
         else:
             self.label_9.setText('Ensure that both passwords match !!')
