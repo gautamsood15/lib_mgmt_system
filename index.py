@@ -103,7 +103,7 @@ class MainApp(QMainWindow , ui):
 
     def Show_All_Books(self):
 
-        self.tableWidget_6.clear()
+        self.tableWidget_6.setRowCount(0)
 
         self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
         self.cur = self.db.cursor()
@@ -300,7 +300,7 @@ class MainApp(QMainWindow , ui):
 
     def Show_All_Clients(self):
 
-        self.tableWidget_5.clear()
+        self.tableWidget_5.setRowCount(0)
 
         self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
         self.cur = self.db.cursor()
@@ -345,7 +345,7 @@ class MainApp(QMainWindow , ui):
     def Edit_Client(self):
         client_original_aadharID = self.lineEdit_27.text()
         client_name = self.lineEdit_28.text()
-        client_email = self.lineEdit_28.text()
+        client_email = self.lineEdit_29.text()
         client_aadharID = self.lineEdit_30.text()
         
         self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
