@@ -7,5 +7,6 @@
 		<file>icons/themes.png</file>
 		<file>icons/users.png</file>
 		<file>icons/arrow.png</file>
+		<file>icons/clients.png</file>
 	</qresource>
 </RCC>
