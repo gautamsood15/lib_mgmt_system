@@ -141,7 +141,6 @@ class MainApp(QMainWindow , ui):
 
         data = self.cur.fetchall()
 
-        print(data)
 
         self.tableWidget.insertRow(0)
         for row , form in enumerate(data):

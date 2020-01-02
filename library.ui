@@ -179,7 +179,7 @@
       </column>
       <column>
        <property name="text">
-        <string>type</string>
+        <string>Type</string>
        </property>
       </column>
       <column>
