@@ -6,7 +6,7 @@ import sys
 import MySQLdb
 
 from PyQt5.uic import loadUiType
-
+import datetime
 
 ui , _ = loadUiType('library.ui')
 
@@ -28,6 +28,7 @@ class MainApp(QMainWindow , ui):
 
         self.Show_All_Clients()
         self.Show_All_Books()
+        self.Show_All_Operations()
     
     def Handel_UI_Changes(self):
         self.Hiding_Themes()
@@ -69,6 +70,8 @@ class MainApp(QMainWindow , ui):
         self.pushButton_21.clicked.connect(self.Delete_Client)
         self.pushButton_19.clicked.connect(self.Edit_Client)
 
+        self.pushButton_6.clicked.connect(self.Handel_Day_Operations)
+
     def Show_Themes(self):
         self.groupBox_3.show()
 
@@ -77,6 +80,7 @@ class MainApp(QMainWindow , ui):
 
 
 ###################### OPENING TABS ####################################
+
 
     def Open_Today_Tab(self):
         self.tabWidget.setCurrentIndex(0)
@@ -95,10 +99,47 @@ class MainApp(QMainWindow , ui):
 
 
 
+###################################### Day Operations ##################################################################
+
+    def Handel_Day_Operations(self):
+
+        book_title = self.lineEdit.text()
+        client_name = self.lineEdit_25.text()
+        type = self.comboBox.currentText()
+        days_number = self.comboBox_2.currentIndex() + 1
+        today_date = datetime.date.today()
+        to_date = today_date + datetime.timedelta(days = days_number)
+
+        print(today_date)
+        print(to_date)
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute('''
+            INSERT INTO dayoperations(book_name , client , type , days , date , to_date)
+            VALUES (%s , %s , %s , %s , %s , %s)
+        ''' , (book_title , client_name , type , days_number , today_date , to_date))
+
+        self.db.commit()
+        self.db.close()
+        self.statusBar().showMessage('New Operation Added')
+        self.Show_All_Operations()
 
 
 
-########################################## BOOK ###############################################
+
+
+
+
+
+
+
+
+
+
+
+########################################## BOOK ########################################################################
 
 
     def Show_All_Books(self):
@@ -265,7 +306,7 @@ class MainApp(QMainWindow , ui):
 
 
 
-####################################### CLIENTS ###################################################
+####################################### CLIENTS ########################################################################
 
 
     def Add_New_Client(self):
@@ -401,8 +442,7 @@ class MainApp(QMainWindow , ui):
 
 
 
-####################################### USERS ###################################################
-
+####################################### USERS ##########################################################################
 
 
     def Add_New_User(self):
@@ -493,7 +533,7 @@ class MainApp(QMainWindow , ui):
 
 
 
-########################################## SETTINGS ##################################################
+########################################## SETTINGS ####################################################################
 
     def Add_Category(self):
 
@@ -620,7 +660,7 @@ class MainApp(QMainWindow , ui):
 
 
 
-########################### SHOW SETTINGS DATA IN UI #####################################
+########################### SHOW SETTINGS DATA IN UI ###################################################################
 
     def Show_Category_Combo(self):
 
@@ -680,7 +720,7 @@ class MainApp(QMainWindow , ui):
 
 
 
-########################### UI THEMES #####################################
+########################### UI THEMES ##################################################################################
 
 
     def Ubuntu_Theme(self):
