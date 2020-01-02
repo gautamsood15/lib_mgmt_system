@@ -128,6 +128,30 @@ class MainApp(QMainWindow , ui):
 
 
 
+    def Show_All_Operations(self):
+
+        self.tableWidget.setRowCount(0)
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute('''
+            SELECT book_name , client , type , date , to_date FROM dayoperations 
+        ''')
+
+        data = self.cur.fetchall()
+
+        print(data)
+
+        self.tableWidget.insertRow(0)
+        for row , form in enumerate(data):
+            for column , item in enumerate(form):
+                self.tableWidget.setItem(row , column , QTableWidgetItem(str(item)))
+                column += 1
+
+            row_position = self.tableWidget.rowCount()
+            self.tableWidget.insertRow(row_position)
+
 
 
 
