@@ -7,6 +7,9 @@ import MySQLdb
 
 from PyQt5.uic import loadUiType
 import datetime
+from xlrd import *
+from xlsxwriter import *
+
 
 ui , _ = loadUiType('library.ui')
 login , _ = loadUiType('login.ui')
@@ -106,6 +109,13 @@ class MainApp(QMainWindow , ui):
         self.pushButton_19.clicked.connect(self.Edit_Client)
 
         self.pushButton_6.clicked.connect(self.Handel_Day_Operations)
+
+        self.pushButton_30.clicked.connect(self.Export_Day_Operations)
+        self.pushButton_28.clicked.connect(self.Export_Books)
+        self.pushButton_29.clicked.connect(self.Export_Clients)
+
+
+
 
     def Show_Themes(self):
         self.groupBox_3.show()
@@ -763,11 +773,33 @@ class MainApp(QMainWindow , ui):
             self.comboBox_5.addItem(pub[0])
             self.comboBox_11.addItem(pub[0])
 
+    ########################### EXPORT DATA ##################################################################################
+
+    def Export_Day_Operations(self):
+        pass
+
+    def Export_Books(self):
+        pass
+
+    def Export_Clients(self):
+        pass
 
 
 
 
-########################### UI THEMES ##################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+    ########################### UI THEMES ##################################################################################
 
 
     def Ubuntu_Theme(self):
