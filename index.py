@@ -9,6 +9,40 @@ from PyQt5.uic import loadUiType
 import datetime
 
 ui , _ = loadUiType('library.ui')
+ui , _ = loadUiType('login.ui')
+
+
+
+class Login(QWidget , ui):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.Handel_login)
+
+
+
+
+    def Handel_login(self):
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        username = self.lineEdit.text()
+        password = self.lineEdit_2.text()
+
+        sql = ''' SELECT * FROM users '''
+
+        self.cur.execute(sql)
+        data = self.cur.fetchall()
+        for row in data:
+            if username == row[1] and password == row[3]:
+                self.window2 = MainApp(self)
+                self.close()
+                self.window2.show()
+
+
+
+########################################################################################################################
 
 class MainApp(QMainWindow , ui):
     def __init__(self):
@@ -500,7 +534,7 @@ class MainApp(QMainWindow , ui):
         data = self.cur.fetchall()
         for row in data :
             if username == row[1] and password == row[3]:
-                print('User Match')
+
                 self.statusBar().showMessage('Valid Username & Password')
                 self.groupBox_4.setEnabled(True)
 
@@ -773,7 +807,7 @@ class MainApp(QMainWindow , ui):
 
 def main():
     app = QApplication(sys.argv)
-    window = MainApp()
+    window = Login()
     window.show()
     app.exec_()
 
