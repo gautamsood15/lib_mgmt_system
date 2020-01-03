@@ -776,7 +776,47 @@ class MainApp(QMainWindow , ui):
     ########################### EXPORT DATA ##################################################################################
 
     def Export_Day_Operations(self):
-        pass
+        self.tableWidget.setRowCount(0)
+
+        self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
+        self.cur = self.db.cursor()
+
+        self.cur.execute('''
+            SELECT book_name , client , type , date , to_date FROM dayoperations 
+        ''')
+
+        data = self.cur.fetchall()
+
+        wb =  Workbook('day_operations.xlsx')
+        sheet1 = wb.add_worksheet()
+
+        sheet1.write(0, 0, 'Book Title')
+        sheet1.write(0, 1, 'Client Name')
+        sheet1.write(0, 2, 'Type')
+        sheet1.write(0, 3, 'From - Date')
+        sheet1.write(0, 4, 'To - Date')
+
+        row_number = 1
+        for row in data:
+            column_number = 0
+            for item in row :
+                sheet1.write(row_number , column_number , str(item))
+                column_number += 1
+            row_number += 1
+
+        wb.close()
+        self.statusBar().showMessage('Report Created Successfully')
+        self.Show_All_Operations()
+
+
+
+
+
+
+
+
+
+
 
     def Export_Books(self):
         pass
@@ -826,15 +866,6 @@ class MainApp(QMainWindow , ui):
         style = open('themes/default.css' , 'r')
         style = style.read()
         self.setStyleSheet(style)
-
-
-
-
-
-
-
-
-
 
 ########################################################################################################################
 
