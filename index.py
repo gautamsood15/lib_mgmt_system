@@ -101,6 +101,8 @@ class MainApp(QMainWindow , ui):
 
 ###################################### Day Operations ##################################################################
 
+
+
     def Handel_Day_Operations(self):
 
         book_title = self.lineEdit.text()
@@ -109,9 +111,6 @@ class MainApp(QMainWindow , ui):
         days_number = self.comboBox_2.currentIndex() + 1
         today_date = datetime.date.today()
         to_date = today_date + datetime.timedelta(days = days_number)
-
-        print(today_date)
-        print(to_date)
 
         self.db = MySQLdb.connect(host='localhost', user='root', password='root@123', db='library')
         self.cur = self.db.cursor()
@@ -152,6 +151,8 @@ class MainApp(QMainWindow , ui):
             self.tableWidget.insertRow(row_position)
 
 
+
+
 ########################################## BOOK ########################################################################
 
 
@@ -175,8 +176,6 @@ class MainApp(QMainWindow , ui):
             self.tableWidget_6.insertRow(row_position)
 
         self.db.close()
-
-
 
 
 
