@@ -9,11 +9,11 @@ from PyQt5.uic import loadUiType
 import datetime
 
 ui , _ = loadUiType('library.ui')
-ui , _ = loadUiType('login.ui')
+login , _ = loadUiType('login.ui')
 
 
 
-class Login(QWidget , ui):
+class Login(QWidget , login):
     def __init__(self):
         QMainWindow.__init__(self)
         self.setupUi(self)
@@ -36,11 +36,12 @@ class Login(QWidget , ui):
         data = self.cur.fetchall()
         for row in data:
             if username == row[1] and password == row[3]:
-                self.window2 = MainApp(self)
+                self.window2 = MainApp()
                 self.close()
                 self.window2.show()
 
-
+            else:
+                self.label.setText('Make Sure You Enter Your Username And Password Correctly')
 
 ########################################################################################################################
 

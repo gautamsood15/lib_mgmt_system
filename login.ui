@@ -48,6 +48,9 @@
      <height>31</height>
     </rect>
    </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
    <property name="placeholderText">
     <string>Enter Password</string>
    </property>
@@ -62,7 +65,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Make Sure You Enter Your User Name And Password Correctly</string>
+    <string/>
    </property>
   </widget>
  </widget>
