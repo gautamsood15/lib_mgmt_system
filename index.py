@@ -21,6 +21,9 @@ class Login(QWidget , login):
         QMainWindow.__init__(self)
         self.setupUi(self)
         self.pushButton.clicked.connect(self.Handel_login)
+        style = open('themes/ubuntu.css' , 'r')
+        style = style.read()
+        self.setStyleSheet(style)
 
 
 
