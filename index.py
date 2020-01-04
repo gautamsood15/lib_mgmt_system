@@ -920,6 +920,10 @@ class MainApp(QMainWindow , ui):
 def main():
     app = QApplication(sys.argv)
     window = Login()
+
+    window.setWindowTitle('PLibrary')
+    window.setWindowIcon(QIcon('ícons/app_icon.png'))
+
     window.show()
     app.exec_()
 
