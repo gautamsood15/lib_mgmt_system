@@ -53,3 +53,11 @@ Library Management System :
 	 	- client name
 	 	- client email
 	 	- client aadhar id	
+
+
+
+INSTALLING S/W TO CLIENT MACHINE
+
+- Install MYSQL Server on Client Machine
+- extract our DB 
+- convert to exe
